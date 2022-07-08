@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#a4d7e6</color>
+    <!--
+    <color name="colorPrimaryDark">#3700B3</color>
+    -->
+    <color name="colorPrimaryDark">#0092CA</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- 追加 color -->
+    <color name="colorPinku">#FF4081</color>
+    <color name="colorMizuiro">#50BADD</color>
+    <color name="colorHaiiro">#F5F5F5</color>
+
+    <color name="menu_color">#FF4081</color>
+
+    <!-- スピナー　カラー -->
+    <color name="holo_blue_light">#33B5E5</color>
+
+    <color name="sankou_bulue">#3EAAD4</color>
+
+    <!-- 黒系　背景色 -->
+    <!-- 薄め -->
+    <color name="main_back_01">#394656</color>
+    <!-- 濃い -->
+    <color name="main_back_02">#182C42</color>
+
+    <color name="middle_sqool_primary">#FF4081</color>
+
+    <color name="siro">#FFFFFF</color>
+
+    <!-- ヘッダー　カラー -->
+    <color name="header_color">#1889e4</color>
+
+    <!-- ヘッダー　カラー　02 -->
+    <color name="header_color_02">#69A7D8</color>
+
+    <color name="red">#B20000</color>
+
+    <!-- 線　や、　薄い文字に -->
+    <color name="hai">#B8B8B8</color>
+
+    <color name="kiiro">#F0BC08</color>
+
+    <color name="midori_01">#0F9856</color>
+
+   <!-- エディットテキスト　カラー -->
+    <color name="colorUnderLineNormal">#FF4081</color>
+    <color name="colorUnderLineActivated">#F5F5F5</color>
+
+    <color name="zangyou_c_01">#97dc5e</color>
+    <color name="zangyou_c_02">#671fa2</color>
+
+
+</resources>
+

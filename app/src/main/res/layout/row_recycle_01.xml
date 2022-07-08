@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="7dp"
+        android:paddingVertical="7dp"
+        >
+
+    <!-- 1 列目 -->
+    <TextView
+        android:id="@+id/send_num_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="送信番号"
+        android:paddingVertical="2dp"
+        android:textSize="12dp"
+        />
+
+    <TextView
+        android:id="@+id/send_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/send_num_label"
+        android:textSize="14dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="7dp"
+        android:textColor="@color/sankou_bulue"
+        />
+
+    <!-- 2 列目 -->
+    <TextView
+        android:id="@+id/send_file_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_num_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="送信ファイル名"
+        android:paddingVertical="2dp"
+        android:textSize="12dp"
+        />
+
+    <TextView
+        android:id="@+id/send_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_num_label"
+        app:layout_constraintLeft_toRightOf="@+id/send_file_name_label"
+        android:textSize="14dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="7dp"
+        android:textColor="@color/sankou_bulue"
+        />
+
+    <!-- 3 列目 -->
+    <TextView
+        android:id="@+id/send_time_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_file_name_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="送信時間"
+        android:paddingVertical="2dp"
+        android:textSize="12dp"
+        />
+
+    <TextView
+        android:id="@+id/send_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_file_name_label"
+        app:layout_constraintLeft_toRightOf="@+id/send_time_label"
+        android:text=""
+        android:textSize="14dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="7dp"
+        android:textColor="@color/sankou_bulue"
+        />
+
+    <!-- 4 列目 -->
+    <TextView
+        android:id="@+id/send_Stats_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_time_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="送信スタッツ"
+        android:paddingVertical="2dp"
+        android:textSize="12dp"
+        />
+
+    <TextView
+        android:id="@+id/send_Stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_time_label"
+        app:layout_constraintLeft_toRightOf="@+id/send_Stats_label"
+        android:text=""
+        android:textSize="14dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="7dp"
+        android:textColor="@color/sankou_bulue"
+        />
+
+    <!-- 5 列目 -->
+    <TextView
+        android:id="@+id/send_count_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_Stats_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="ファイル数"
+        android:paddingVertical="2dp"
+        android:textSize="12dp"
+        />
+
+    <TextView
+        android:id="@+id/send_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_Stats_label"
+        app:layout_constraintLeft_toRightOf="@+id/send_count_label"
+        android:text=""
+        android:textSize="14dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="7dp"
+        android:textColor="@color/sankou_bulue"
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

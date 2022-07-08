@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/alertdialog_layout_02"
+    android:paddingBottom="15dp"
+    >
+
+    <!--チェックボックス　遅刻 -->
+    <CheckBox
+        android:id="@+id/dia_chack_01_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dia_chack_01_02"
+        android:text="遅刻"
+        android:layout_marginTop="20dp"
+        />
+
+    <!--チェックボックス 早退 -->
+    <CheckBox
+        android:id="@+id/dia_chack_01_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:textSize="24sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/dia_chack_01_01"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="早退"
+        android:layout_marginTop="20dp"
+        />
+
+    <Spinner
+        android:id="@+id/Tkoku_spi"
+        android:entries="@array/list"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:textAlignment="center"
+        android:background="@android:color/holo_blue_light"
+        android:paddingRight="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dia_chack_01_02"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        />
+
+
+    <!-- 時間入力　エディットテキスト -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dia_chack_01_01_box"
+        app:layout_goneMarginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Tkoku_spi"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:nextFocusDown="@+id/Input_starttime_box"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="10dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="7"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxStrokeColor="@color/colorPinku"
+        android:paddingTop="15dp"
+        app:boxBackgroundColor="@color/colorHaiiro"
+        android:textColorHint="#FF4081"
+        android:layout_marginHorizontal="20dp"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dia_chack_01_01_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="時間を入力してください"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLength="7"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/Input_starttime_box"
+            android:textColor="#000000"
+            android:textColorHint="#FF4081"
+            android:textSize="16sp"
+            app:colorControlActivated="#FF4081"
+            app:colorControlNormal="#FF4081" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 保存 ボタン -->
+
+    <!-- キャンセル ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dia_touroku_btn_001"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
+        android:text="保存"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="#FF4081"
+        android:textSize="13dp"
+        app:backgroundTint="@color/main_back_01"
+        app:cornerRadius="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dia_touroku_btn_002"
+        app:layout_constraintTop_toBottomOf="@+id/dia_chack_01_01_box"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dia_touroku_btn_002"
+        app:layout_constraintTop_toBottomOf="@+id/dia_chack_01_01_box"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/dia_touroku_btn_001"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:text="キャンセル"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        app:backgroundTint="@color/main_back_01"
+        app:cornerRadius="6dp"
+        android:layout_marginTop="20dp"
+        android:textSize="13dp"
+        android:textColor="#FF4081"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

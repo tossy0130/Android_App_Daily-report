@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="actionMenuTextColor">@color/menu_color</item>
+
+        <item name="android:alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert</item>
+
+    </style>
+
+    <style name="Theme.App.Base" parent="Theme.AppCompat.Light">
+    <item name="colorControlNormal">@color/middle_sqool_primary</item>
+    <item name="colorControlActivated">@color/middle_sqool_primary</item>
+    <item name="colorControlHighlight">@color/middle_sqool_primary</item>
+
+</style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">@color/siro</item>
+        <item name="colorControlActivated">@color/colorPinku</item>
+        <item name="android:textCursorDrawable">@color/cardview_light_background</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:textColorHighlight">@color/colorMizuiro</item>
+    </style>
+
+
+
+    <!-- menu テキスト　カラー　スタイル -->
+
+    <style name="MenuTextAppearance" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@color/menu_color</item>
+    </style>
+
+    <style name="MenuItems" parent="AppTheme">
+        <item name="android:textSize">5sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/menu_color</item>
+    </style>
+
+    <!-- エディットテキスト　下線　色　変更 -->
+    <style name="EditTextColorControl">
+        <item name="colorControlNormal">@color/colorUnderLineNormal</item>
+        <item name="colorControlActivated">@color/colorUnderLineActivated</item>
+    </style>
+
+</resources>
+
+
+
+
+
+

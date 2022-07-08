@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:isScrollContainer="false"
+    android:id="@+id/qr_const_03"
+    tools:context=".Work_Choice">
+
+    <LinearLayout
+        android:id="@+id/qr_const_01"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:paddingBottom="30dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/qr_const_02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <!-- ヘッダー　担当者 -->
+    <FrameLayout
+        android:id="@+id/header_account_view_002"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="@color/header_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/co_03"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/ch_back_btn_y"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/ch_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="6dp"
+                android:singleLine="true"
+                android:text="未登録ユーザー"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toRightOf="@+id/ch_back_btn_y"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ch_busyo_view_Hon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:drawableLeft="@drawable/ic_baseline_call_to_action_24"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="6dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toRightOf="@+id/ch_user_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!-- ************** 横線 *************** -->
+            <View
+                android:id="@+id/list_line_col_03"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ch_back_btn_y" />
+
+           <!-- 作業部署　ラベル -->
+            <TextView
+            android:id="@+id/ch_busyo_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="50dp"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:paddingLeft="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingRight="6dp"
+            android:singleLine="true"
+            android:text="作業部署"
+            android:background="#FF4081"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_line_col_03"
+            />
+
+            <!-- チェックなし アイコン -->
+            <TextView
+                android:id="@+id/ch_busyo_label_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_baseline_indeterminate_check_box_24"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                app:layout_constraintRight_toLeftOf="@+id/ch_busyo_label_03"
+                app:layout_constraintLeft_toRightOf="@+id/ch_busyo_label"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_03"
+                app:layout_constraintBottom_toTopOf="@+id/ch_busyo_text_box"
+                />
+
+            <!-- チェックあり　アイコン -->
+            <ImageButton
+                android:id="@+id/ch_busyo_label_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="85dp"
+                android:layout_marginLeft="0dp"
+                android:src="@drawable/ic_baseline_check_circle_24"
+                android:text=""
+                android:textColor="#ffffff"
+                app:layout_constraintLeft_toRightOf="@+id/ch_busyo_label_02"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_03"
+                app:layout_constraintBottom_toTopOf="@+id/ch_busyo_text_box"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                />
+
+            <TextView
+                android:id="@+id/ch_busyo_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:drawableLeft="@drawable/ic_baseline_call_to_action_24"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="6dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ch_busyo_label" />
+
+            <Spinner
+                android:id="@+id/ch_spinner_busyo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_blue_light"
+                android:paddingRight="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/ch_busyo_view"
+                app:layout_constraintTop_toBottomOf="@+id/ch_busyo_label"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ch_busyo_view"
+                />
+
+
+            <TextView
+                android:id="@+id/ch_busyo_text_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text=""
+                android:textColor="#ffffff"
+                app:layout_constraintLeft_toRightOf="@+id/ch_busyo_view"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ch_busyo_label"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ch_busyo_view"
+                />
+
+
+            <!-- 部署名 END -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <!-- 作業追加　ボタン 01 -->
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintTop_toBottomOf="@+id/header_account_view_002"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="#ff52b2"
+        android:text="バーコード QRコード 読み取り"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="25dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="20dp"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconTint="#ff52b2"
+        app:strokeColor="@color/colorHaiiro"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:id="@+id/work_C_btn_01"
+        />
+
+    <!-- 作業追加　ボタン 02 -->
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintTop_toBottomOf="@+id/work_C_btn_01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="#ff52b2"
+        android:text="リスト 選択"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="25dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="20dp"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconTint="#ff52b2"
+        app:strokeColor="@color/colorHaiiro"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:id="@+id/work_C_btn_02"
+        />
+
+    <!-- 作業追加　ボタン 03 -->
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintTop_toBottomOf="@+id/work_C_btn_02"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="#ff52b2"
+        android:text="手動 入力"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="25dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="20dp"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconTint="#ff52b2"
+        app:strokeColor="@color/colorHaiiro"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:id="@+id/work_C_btn_03"
+        />
+
+    <!-- 送信ボタン -->
+    <Button
+        android:id="@+id/send_csv_01_btn"
+        android:text="送信画面"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/work_C_btn_03"
+
+        />
+
+    <!-- 送信ボタン -->
+    <Button
+        android:id="@+id/send_log_btn"
+        android:text="送信履歴"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/send_csv_01_btn"
+
+        />
+
+            <!-- 送信ボタン -->
+            <Button
+                android:id="@+id/worker_test_btn"
+                android:text="ファイル 定期送信"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/send_log_btn"
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+

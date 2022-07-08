@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:isScrollContainer="false"
+    android:id="@+id/qr_const_03"
+    tools:context=".Free_Input">
+
+    <LinearLayout
+        android:id="@+id/qr_const_01"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:paddingBottom="30dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/qr_const_02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/free_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:background="@color/main_back_01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 自由入力用　textview -->
+
+
+            <!-- 開始時間　追加 -->
+            <EditText
+                android:id="@+id/free_input_edit"
+                android:layout_width="300dp"
+                android:layout_height="260dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/frame_style"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                app:layout_constraintHorizontal_bias="0.513"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/free_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F5F5F5"
+                android:drawableBottom="@drawable/ic_baseline_more_time_24"
+                android:text="開始時間"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/free_input_edit"
+                app:layout_constraintRight_toLeftOf="@+id/free_end_time"
+                android:layout_marginLeft="15dp"
+                />
+
+            <!-- 終了時間　追加 -->
+            <Button
+                android:id="@+id/free_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F5F5F5"
+                android:drawableBottom="@drawable/ic_baseline_more_time_24"
+                android:text="終了時間"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/free_start_time"
+                app:layout_constraintTop_toBottomOf="@+id/get_spiiner_text"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/free_start_time"
+                />
+
+
+            <!-- 開始時間 view　追加 -->
+            <TextView
+                android:id="@+id/free_start_time_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_border_bottom"
+                android:gravity="center_horizontal"
+                android:paddingBottom="7dp"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/free_end_time_view"
+                app:layout_constraintTop_toBottomOf="@+id/free_start_time" />
+
+            <!-- 終了時間 view　追加 -->
+            <TextView
+                android:id="@+id/free_end_time_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/free_end_time"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/free_start_time_view"
+                android:background="@drawable/bg_border_bottom"
+                android:paddingBottom="7dp"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/free_start_time_view"
+                />
+            <!-- 時間コンポーネント　追加 END -->
+
+
+
+    <!-- 作業時間　入力 -->
+    <!-- 時間入力　エディットテキスト -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/free_input_time_edit_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/free_start_time_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="4"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxStrokeColor="@color/colorPinku"
+        android:paddingHorizontal="30dp"
+        android:textColorHint="#FF4081"
+        app:boxBackgroundColor="@color/main_back_01">
+
+    <!-- 作業時間　表示 -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/free_input_time_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="作業時間を入力してください。（優先）"
+        android:imeOptions="actionDone"
+        android:inputType="textEmailAddress"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="-45dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- 戻るボタン　& 保存ボタン -->
+
+    <!-- 戻る　ボタン  -->
+
+    <!-- 保存　ボタン  -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/free_back_btn"
+        android:layout_width="120dp"
+        android:layout_height="66dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="25dp"
+        android:text="戻る"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textSize="16dp"
+        app:backgroundTint="#a4d7e6"
+        app:cornerRadius="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/free_save_btn"
+        app:layout_constraintTop_toBottomOf="@+id/free_input_time_edit_box" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/free_save_btn"
+        app:layout_constraintTop_toBottomOf="@+id/free_input_time_edit_box"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/free_back_btn"
+        app:layout_constraintBaseline_toBaselineOf="@+id/free_back_btn"
+        android:layout_width="120dp"
+        android:layout_height="66dp"
+        android:layout_gravity="bottom"
+        android:text="保存"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        app:backgroundTint="#a4d7e6"
+        app:cornerRadius="6dp"
+        android:layout_marginTop="0dp"
+        android:textSize="16dp"
+        />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

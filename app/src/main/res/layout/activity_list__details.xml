@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:isScrollContainer="false"
+    tools:context=".List_Details">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_01"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_001"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp"
+            >
+
+            <!-- フォーカス　外し用 -->
+            <TextView
+                android:id="@+id/focusView_02"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:layout_constraintTop_toBottomOf="@+id/qr_const_02"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
+            <!-- 上段　読み取り　情報 エリア -->
+
+            <!-- 作業番号ラベル -->
+
+            <View
+                android:id="@+id/header_view_detail_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/main_back_01"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/d_list_id_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_id"
+                android:text="作業番号"
+                android:textColor="#ffffff"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                />
+
+
+
+            <!-- 品名 ラベル -->
+            <TextView
+                android:id="@+id/d_list_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_id_label"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_id_label"
+                android:text="作業名"
+                android:textColor="#ffffff"
+
+                />
+
+            <!-- 作業番号 表示 -->
+            <TextView
+                android:id="@+id/d_list_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_id_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_id_label"
+                android:textColor="#fb7ac2"
+                android:textSize="22dp"
+                android:layout_marginLeft="15dp"
+                />
+
+
+            <!-- 品名 表示 -->
+            <TextView
+                android:id="@+id/d_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_id_label"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_id"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_id"
+                android:textColor="#fb7ac2"
+                android:textSize="15dp"
+                />
+
+            <!-- ************** 横線 *************** -->
+            <View
+                android:id="@+id/list_line_col_01"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="15dp"
+                android:background="@color/colorPinku"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_id"
+
+                />
+
+            <!-- ２列目　-->
+
+            <!-- 予定数量 エリア-->
+            <TextView
+                android:id="@+id/d_list_yotei_num_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_01"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="#ffffff"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="20dp"
+                android:text="予定数量"
+                />
+
+            <EditText
+                android:id="@+id/d_list_yotei_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_01"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_yotei_num_label"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_souseisan_label"
+                android:textColor="#fb7ac2"
+                android:textSize="22dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_yotei_num_label"
+                android:theme="@style/EditTextColorControl"
+                />
+
+            <!-- 予定数量 エリア END -->
+
+            <!-- 総生産数 -->
+            <TextView
+                android:id="@+id/d_list_souseisan_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_01"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_yotei_num"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_souseisan_num"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_yotei_num_label"
+                android:text="総生産数"
+                android:textColor="#ffffff"
+
+                />
+
+            <TextView
+                android:id="@+id/d_list_souseisan_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_01"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_souseisan_label"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_yotei_num_label"
+                android:textColor="#fb7ac2"
+                android:textSize="22dp"
+                />
+
+            <!-- 段取時間　エリア-->
+
+
+            <!-- 開始時間　追加 -->
+            <Button
+                android:id="@+id/list_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F5F5F5"
+                android:drawableBottom="@drawable/ic_baseline_more_time_24"
+                android:text="開始時間"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_yotei_num_label"
+                app:layout_constraintRight_toLeftOf="@+id/list_end_time"
+                android:layout_marginLeft="15dp"
+                />
+
+            <!-- 終了時間　追加 -->
+            <Button
+                android:id="@+id/list_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F5F5F5"
+                android:drawableBottom="@drawable/ic_baseline_more_time_24"
+                android:text="終了時間"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/list_start_time"
+                app:layout_constraintTop_toBottomOf="@+id/get_spiiner_text"
+                app:layout_constraintBaseline_toBaselineOf="@+id/list_start_time"
+                android:layout_marginLeft="15dp"
+                />
+
+
+            <!-- 開始時間 view　追加 -->
+            <TextView
+                android:id="@+id/list_start_time_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_border_bottom"
+                android:gravity="center_horizontal"
+                android:paddingBottom="7dp"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/list_end_time_view"
+                app:layout_constraintTop_toBottomOf="@+id/list_start_time" />
+
+            <!-- 終了時間 view　追加 -->
+            <!-- 時間コンポーネント　追加 END -->
+
+
+            <!-- 作業時間　エリア -->
+            <TextView
+                android:id="@+id/list_end_time_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_border_bottom"
+                android:gravity="center_horizontal"
+                android:paddingBottom="7dp"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                app:layout_constraintLeft_toRightOf="@+id/list_start_time_view"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_end_time" />
+
+
+            <!-- 追加　「樹脂成型課」　用　入力　表示　ボタン  -->
+            <Button
+                android:id="@+id/Zyushi_Seikei_btn_a"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/sankou_bulue"
+                android:drawableBottom="@drawable/ic_baseline_input_22"
+                android:text="樹脂成型課 段取り時間 入力"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_view_detail_list"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <!-- 色段取　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/iro_z_box_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Zyushi_Seikei_btn_a"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/Kata_z_box_a"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/iro_z_edit_a"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="色段取"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--  色段取　入力  END -->
+
+            <!-- 型段取り　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Kata_z_box_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Zyushi_Seikei_btn_a"
+                app:layout_constraintLeft_toRightOf="@+id/iro_z_box_a"
+                app:layout_constraintRight_toLeftOf="@+id/Kikai_z_box_a"
+                app:layout_constraintBaseline_toBaselineOf="@+id/iro_z_box_a"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Kata_z_edit_a"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="型段取"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 型段取り　入力  END -->
+
+            <!-- 機械コード　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Kikai_z_box_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Zyushi_Seikei_btn_a"
+                app:layout_constraintLeft_toRightOf="@+id/Kata_z_box_a"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Kikai_z_input_a"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="機械コード"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="16sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081"
+                    app:layout_constraintRight_toLeftOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/d_list_dandori_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="100dp"
+                android:text="段取時間"
+                android:textColor="@color/main_back_01"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/d_list_dandori_time_num_box"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_sagyou_time_label"
+                app:layout_constraintTop_toBottomOf="@+id/Kikai_z_box_a" />
+
+            <TextView
+                android:id="@+id/d_list_sagyou_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="作業時間"
+                app:layout_constraintBottom_toTopOf="@+id/d_list_sagyou_time_num_box"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Kikai_z_box"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_dandori_time_label"
+                android:textColor="@color/main_back_01"
+                android:textSize="14dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="20dp"
+                />
+
+
+
+            <!-- 段取時間　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/d_list_dandori_time_num_box"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_dandori_time_label"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_sagyou_time_num_box"
+                android:layout_marginTop="0dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="0dp"
+                app:boxBackgroundColor="#ffffff"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/d_list_dandori_time_num"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="段取時間"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="18sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 作業時間　入力 END -->
+
+
+            <!-- 作業時間　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/d_list_sagyou_time_num_box"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_dandori_time_label"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_dandori_time_num_box"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_dandori_time_num_box"
+                android:layout_marginTop="0dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="#ffffff"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/d_list_sagyou_time_num"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="作業時間"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="18sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 作業時間　入力 END -->
+
+
+
+　　　　　　　<!-- 分 -->
+            <!--
+            <TextView
+                android:id="@+id/d_list_time_fun_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分"
+                android:textColor="@color/main_back_01"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_view_detail_list"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="30dp"
+                />
+                -->
+
+            <!-- ************** 横線 *************** -->
+            <View
+                android:id="@+id/list_line_col_02"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="15dp"
+                android:background="@color/hai"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/d_list_dandori_time_num_box"
+                />
+
+
+            <!-- 入力欄　エリア 上段　ラベル -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/content_back_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginVertical="6dp"
+                android:paddingHorizontal="5dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_02"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/d_list_kaishi_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/d_list_syuuryou_l"
+                        android:text="開始数時"
+                        android:layout_marginTop="10dp"
+                        android:background="#fb7ac2"
+                        android:textColor="#ffffff"
+                        android:paddingVertical="3dp"
+                        android:paddingHorizontal="6dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="30dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/d_list_syuuryou_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="50dp"
+                        android:background="#fb7ac2"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="3dp"
+                        android:text="終了数時"
+                        android:textColor="#ffffff"
+                        app:layout_constraintLeft_toRightOf="@+id/d_list_kaishi_l"
+                        app:layout_constraintRight_toLeftOf="@+id/d_list_kakou"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/d_list_kaishi_l"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/d_list_kakou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/d_list_syuuryou_l"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/d_list_kaishi_l"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="加工数"
+                        android:background="#fb7ac2"
+                        android:textColor="#ffffff"
+                        android:paddingVertical="3dp"
+                        android:paddingHorizontal="6dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="50dp"
+                        />
+
+                    <!-- 開始時間　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_starttime_box_list_d"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/d_list_kaishi_l"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/Input_endtime_box_list_d"
+                        android:layout_marginTop="10dp"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="7"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/colorPinku"
+                        android:paddingHorizontal="10dp"
+                        app:boxBackgroundColor="@color/colorHaiiro"
+                        android:textColorHint="#FF4081"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_starttime_list_d"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:hint="開始時"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="7"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textColorHint="#FF4081"
+                            android:textSize="14sp"
+                            app:colorControlActivated="#FF4081"
+                            app:colorControlNormal="#FF4081" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!--  開始時間　入力  END -->
+
+                    <!-- 終了時　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_endtime_box_list_d"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/d_list_kaishi_l"
+                        app:layout_constraintLeft_toRightOf="@+id/Input_starttime_box_list_d"
+                        app:layout_constraintRight_toLeftOf="@+id/Input_kakousuu_box_list_d"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/Input_starttime_box_list_d"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="7"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/colorPinku"
+                        android:paddingHorizontal="10dp"
+                        app:boxBackgroundColor="@color/colorHaiiro"
+                        android:textColorHint="#FF4081"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Input_endtime_list_d"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:hint="終了時"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="7"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textColorHint="#FF4081"
+                            android:textSize="14sp"
+                            app:colorControlActivated="#FF4081"
+                            app:colorControlNormal="#FF4081" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- 終了時　入力  END -->
+
+
+                    <!-- 加工数　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_kakousuu_box_list_d"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/d_list_kaishi_l"
+                        app:layout_constraintLeft_toRightOf="@+id/Input_endtime_box_list_d"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/Input_starttime_box_list_d"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="7"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/colorPinku"
+                        android:paddingHorizontal="10dp"
+                        app:boxBackgroundColor="@color/colorHaiiro"
+                        android:textColorHint="#FF4081"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Input_kakousuu_list_d"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:hint="加工数"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="7"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textColorHint="#FF4081"
+                            android:textSize="14sp"
+                            app:colorControlActivated="#FF4081"
+                            app:colorControlNormal="#FF4081" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- 終了時　入力  END -->
+
+                    <!-- 不良品数 -->
+                    <TextView
+                        android:id="@+id/d_list_furyou_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/Input_endtime_box_list_d"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/d_list_syoukei_l"
+                        android:text="不良品数"
+                        android:layout_marginTop="10dp"
+                        android:background="#fb7ac2"
+                        android:textColor="#ffffff"
+                        android:paddingVertical="3dp"
+                        android:paddingHorizontal="6dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="30dp"
+                        />
+
+                    <!-- 生産数 -->
+                    <TextView
+                        android:id="@+id/d_list_syoukei_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/Input_endtime_box_list_d"
+                        app:layout_constraintLeft_toRightOf="@+id/d_list_furyou_l"
+                        app:layout_constraintRight_toLeftOf="@+id/d_list_ryouhinn_l"
+                        android:text="生産数"
+                        android:layout_marginTop="10dp"
+                        android:background="#fb7ac2"
+                        android:textColor="#ffffff"
+                        android:paddingVertical="3dp"
+                        android:paddingHorizontal="6dp"
+                        android:layout_marginRight="50dp"
+                        />
+
+                    <!-- 良品数 -->
+                    <TextView
+                        android:id="@+id/d_list_ryouhinn_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/Input_endtime_box_list_d"
+                        app:layout_constraintLeft_toRightOf="@+id/d_list_syoukei_l"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:text="良品数"
+                        android:background="@color/colorPinku"
+                        android:textColor="#ffffff"
+                        android:paddingVertical="3dp"
+                        android:paddingHorizontal="6dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="50dp"
+                        />
+
+                    <!-- 不良品数　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_furyou_box_list_d"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/d_list_furyou_l"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/Input_syoukei_box_list_d"
+                        android:layout_marginTop="10dp"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="7"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/colorPinku"
+                        android:paddingHorizontal="10dp"
+                        app:boxBackgroundColor="@color/colorHaiiro"
+                        android:textColorHint="#FF4081"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_furyou_list_d"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:hint="不良品数"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="7"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textColorHint="#FF4081"
+                            android:textSize="14sp"
+                            app:colorControlActivated="#FF4081"
+                            app:colorControlNormal="#FF4081" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!--  不良品数　入力  END -->
+
+                    <!-- 生産数 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_syoukei_box_list_d"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/d_list_furyou_l"
+                        app:layout_constraintRight_toLeftOf="@+id/Input_ryouhinn_box_list_d"
+                        app:layout_constraintLeft_toRightOf="@+id/Input_furyou_box_list_d"
+                        android:layout_marginTop="10dp"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="7"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/colorPinku"
+                        android:paddingHorizontal="10dp"
+                        app:boxBackgroundColor="@color/colorHaiiro"
+                        android:textColorHint="#FF4081"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_syoukei_list_d"
+                            android:layout_width="125dp"
+                            android:layout_height="57dp"
+                            android:hint="生産数（小計）"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="7"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textColorHint="#FF4081"
+                            android:textSize="14sp"
+                            app:colorControlActivated="#FF4081"
+                            app:colorControlNormal="#FF4081" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- 良品数　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_ryouhinn_box_list_d"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/d_list_furyou_l"
+                        app:layout_constraintLeft_toRightOf="@+id/Input_syoukei_box_list_d"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/Input_furyou_box_list_d"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="7"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:boxStrokeColor="@color/colorPinku"
+                        android:paddingHorizontal="10dp"
+                        app:boxBackgroundColor="@color/colorHaiiro"
+                        android:textColorHint="#FF4081"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Input_ryouhinn_list_d"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:hint="良品数"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="7"
+                            android:maxLines="1"
+                            android:textColor="@color/colorPinku"
+                            android:textColorHint="#FF4081"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:colorControlActivated="#FF4081"
+                            app:colorControlNormal="#FF4081"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- 良品数　入力  END -->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+            <FrameLayout
+                android:id="@+id/list_select_header_view_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_back_01"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:paddingBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/content_back_01" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/co_03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- 塗装課用　スピナー -->
+                    <Spinner
+                        android:id="@+id/list_spinner_Tosou"
+                        android:entries="@array/list"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="center"
+                        android:background="@android:color/holo_blue_light"
+                        android:paddingRight="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/spinner_01"
+                        android:layout_marginTop="60dp"
+                        android:gravity="center_horizontal" />
+
+                    <Spinner
+                        android:id="@+id/list_spinner_001"
+                        android:entries="@array/list"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="center"
+                        android:background="@android:color/holo_blue_light"
+                        android:paddingRight="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/list_spinner_Tosou"
+                        android:layout_marginTop="20dp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/list_spinner_002"
+                        android:entries="@array/list"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="center"
+                        android:background="@android:color/holo_blue_light"
+                        android:paddingRight="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/list_spinner_001"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="20dp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/list_spinner_003"
+                        android:entries="@array/list"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="center"
+                        android:background="@android:color/holo_blue_light"
+                        android:paddingRight="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/list_spinner_002"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="20dp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/list_spinner_004"
+                        android:entries="@array/list"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        android:textAlignment="center"
+                        android:background="@android:color/holo_blue_light"
+                        android:paddingRight="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/list_spinner_003"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="20dp"
+                        />
+
+                    <!-- スピナー　値取得　テキストビュー -->
+                    <TextView
+                        android:id="@+id/list_get_spiiner_text_01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/bg_border_bottom"
+                        android:paddingBottom="10dp"
+                        android:text=""
+                        android:textColor="#ffffff"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/list_spinner_004" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+
+
+            <!-- 戻る　ボタン  -->
+            <!-- 保存　ボタン  -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/d_list_back_btn"
+                android:layout_width="120dp"
+                android:layout_height="66dp"
+                android:layout_gravity="bottom"
+                android:text="戻る"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                android:textSize="16dp"
+                app:backgroundTint="#a4d7e6"
+                app:cornerRadius="6dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_save_btn"
+                app:layout_constraintTop_toBottomOf="@+id/list_select_header_view_02"
+                />
+
+            <!-- 最終工程　ラベル -->
+            <TextView
+                android:id="@+id/last_koutei_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/list_select_header_view_02"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_back_btn"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_save_btn"
+                android:text="最終工程"
+                android:textColor="@color/main_back_01"
+                android:textFontWeight="@android:integer/config_longAnimTime"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <!-- チェックボックス -->
+            <CheckBox
+                android:id="@+id/list_last_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/last_koutei_label"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_back_btn"
+                app:layout_constraintRight_toLeftOf="@+id/d_list_save_btn"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/d_list_save_btn"
+                app:layout_constraintTop_toBottomOf="@+id/content_back_01"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/d_list_back_btn"
+                app:layout_constraintBaseline_toBaselineOf="@+id/d_list_back_btn"
+                android:layout_width="120dp"
+                android:layout_height="66dp"
+                android:layout_gravity="bottom"
+                android:text="更新する"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                app:backgroundTint="#a4d7e6"
+                app:cornerRadius="6dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="16dp"
+                android:layout_marginLeft="30dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

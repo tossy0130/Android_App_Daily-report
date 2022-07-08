@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ダイアログ　デザイン -->
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+     <!--   <item name="colorAccent">@color/primary</item> -->
+        <!--   <item name="android:textSize">@dimen/dialog_text_size</item> -->
+           <item name="android:windowMinWidthMajor">@dimen/dialog_min_width_major</item>
+           <item name="android:windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
+
+           <item name="buttonBarNeutralButtonStyle">@style/buttonBarButtonStyle.Neutral</item>
+           <item name="buttonBarNegativeButtonStyle">@style/buttonBarButtonStyle.Negative</item>
+           <item name="buttonBarPositiveButtonStyle">@style/buttonBarButtonStyle.Positive</item>
+
+       </style>
+
+       <style name="buttonBarButtonStyle" parent="Widget.AppCompat.Button.Borderless.Colored">
+       </style>
+
+       <style name="buttonBarButtonStyle.Neutral">
+       </style>
+
+       <style name="buttonBarButtonStyle.Negative">
+           <item name="android:textColor">@color/siro</item>
+       </style>
+
+       <style name="buttonBarButtonStyle.Positive">
+           <item name="android:textColor">@color/siro</item>
+       </style>
+   </resources>

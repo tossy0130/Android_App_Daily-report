@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:isScrollContainer="false"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_01"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_001"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="0dp"
+            >
+
+    <!-- ログイン id 表示用　ラベル -->
+
+    <TextView
+        android:id="@+id/app_title_01"
+       android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:fontFamily="@font/tienne_bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="22dp"
+        android:letterSpacing="0.3"
+        android:gravity="center_horizontal"
+        />
+
+    <!-- 作業時間　選択 -->
+    <Button
+        android:id="@+id/sagyou_btn"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#F5F5F5"
+        android:drawableBottom="@drawable/ic_baseline_more_time_24"
+        android:text="作業日を選択する"
+        android:textColor="#666666"
+        android:textSize="11dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_title_01"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="15dp"
+        />
+
+    <TextView
+        android:id="@+id/sagyou_sentaku_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="70dp"
+        android:background="@drawable/bg_border_bottom_02"
+        android:gravity="center_horizontal"
+        android:paddingBottom="7dp"
+        android:textColor="#666666"
+        android:textSize="17dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sagyou_btn"
+        android:letterSpacing="0.2"
+        />
+
+    <!-- 作業時間　選択 END -->
+
+
+    <!-- ユーザー入力　画面　テキストエディット　Start -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_input_la"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sagyou_sentaku_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="35dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="4"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        android:paddingHorizontal="30dp"
+        app:boxStrokeColor="#dedede"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/user_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="担当コードを入力してください"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:letterSpacing="0.2"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ユーザー入力　テキストエディット　END -->
+
+    <!-- アカウント　表示用 テキストビュー Start -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/user_input_la"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginVertical="15dp"
+        android:paddingHorizontal="80dp"
+        android:id="@+id/user_view"
+        />
+
+            <!-- エラーメッセージ　表示用 -->
+            <TextView
+                android:id="@+id/err_view_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:background="#ffffff"
+                app:layout_constraintTop_toBottomOf="@+id/user_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginVertical="15dp"
+                android:paddingHorizontal="80dp"
+                />
+
+
+
+    <!-- ログイン　ボタン start -->
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintTop_toBottomOf="@+id/err_view_00"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:text="ログイン"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        app:backgroundTint="#a4d7e6"
+        app:cornerRadius="18dp"
+        android:layout_marginHorizontal="52dp"
+        android:layout_marginTop="25dp"
+        android:textSize="20dp"
+        android:letterSpacing="0.2"
+        android:id="@+id/login_btn"
+        />
+
+    <!-- 作業追加　ボタン -->
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="#ff52b2"
+        android:text="ログイン情報 ダウンロード"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="20dp"
+        app:icon="@drawable/ic_baseline_get_app_24"
+        app:iconTint="#ff52b2"
+        app:backgroundTint="@color/colorHaiiro"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:id="@+id/csv_btn_01"
+        />
+
+            <!-- 最新アプリ　ダウンロードボタン -->
+            <com.google.android.material.button.MaterialButton
+                app:layout_constraintTop_toBottomOf="@+id/csv_btn_01"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="最新アプリをダウンロード"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="20dp"
+                app:icon="@drawable/ic_baseline_cloud_download_24"
+                app:iconGravity="textStart"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/kousin_w"
+                />
+
+            <!-- バージョン情報 -->
+            <TextView
+                android:id="@+id/version_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:gravity="center_horizontal"
+                android:background="#666666"
+                app:layout_constraintTop_toBottomOf="@+id/kousin_w"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginVertical="15dp"
+                android:paddingVertical="5dp"
+                android:text="version 1.0.3"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

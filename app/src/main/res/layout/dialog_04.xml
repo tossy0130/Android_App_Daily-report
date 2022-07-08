@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/alertdialog_layout_04"
+    android:paddingBottom="15dp">
+
+    <!-- 色段取時間 ラベル -->
+    <TextView
+        android:id="@+id/d04_label_01"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/d04_label_02"
+        android:layout_marginTop="10dp"
+        android:text="色段取時間"
+        android:textColor="#ffffff"
+        android:background="@color/header_color"
+        android:gravity="center_horizontal"
+        android:textSize="12dp"
+        android:padding="5dp"
+        />
+
+    <!-- 型段取時間 ラベル -->
+    <TextView
+        android:id="@+id/d04_label_02"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/d04_label_01"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/d04_label_01"
+        android:text="型段取時間"
+        android:textColor="#ffffff"
+        android:background="@color/midori_01"
+        android:gravity="center_horizontal"
+        android:textSize="12dp"
+        android:padding="5dp"
+        />
+
+    <!-- 色段取時間　時間入力 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/iro_box"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/d04_label_01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/kata_box"
+        android:nextFocusDown="@+id/Input_starttime_box"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="15dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="7"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxStrokeColor="@color/header_color"
+        android:paddingHorizontal="10dp"
+        app:boxBackgroundColor="@color/colorHaiiro"
+        android:textColorHint="#1889e4"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/iro_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="時間入力"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLength="7"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/Input_starttime_box"
+            android:textColor="#000000"
+            android:textColorHint="#FF4081"
+            android:textSize="16sp"
+            app:colorControlActivated="#FF4081"
+            app:colorControlNormal="#FF4081"
+            app:layout_constraintRight_toLeftOf="@+id/Input_starttime_box" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 型段取時間　時間入力 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/kata_box"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/d04_label_01"
+        app:layout_constraintLeft_toRightOf="@+id/iro_box"
+        app:layout_constraintRight_toRightOf="parent"
+        android:nextFocusDown="@+id/Input_starttime_box"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="15dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="7"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxStrokeColor="@color/midori_01"
+        android:paddingHorizontal="10dp"
+        app:boxBackgroundColor="@color/colorHaiiro"
+        android:textColorHint="#0F9856"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/kata_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="時間入力"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLength="7"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/Input_starttime_box"
+            android:textColor="#000000"
+            android:textColorHint="#FF4081"
+            android:textSize="16sp"
+            app:colorControlActivated="#FF4081"
+            app:colorControlNormal="#FF4081"
+            app:layout_constraintRight_toLeftOf="@+id/Input_starttime_box" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 機械コード　入力　-->
+    <!-- 型段取時間　時間入力 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/kikai_box"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/iro_box"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:nextFocusDown="@+id/Input_starttime_box"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="15dp"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="7"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxStrokeColor="@color/colorPinku"
+        android:paddingHorizontal="10dp"
+        app:boxBackgroundColor="@color/colorHaiiro"
+        android:textColorHint="#FF4081"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/kikai_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="機械コード入力"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLength="7"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/Input_starttime_box"
+            android:textColor="#000000"
+            android:textColorHint="#FF4081"
+            android:textSize="16sp"
+            app:colorControlActivated="#FF4081"
+            app:colorControlNormal="#FF4081"
+            app:layout_constraintRight_toLeftOf="@+id/Input_starttime_box"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- 保存 ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dia_4_touroku_btn_001"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
+        android:text="保存"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="#FF4081"
+        android:textSize="13dp"
+        app:backgroundTint="@color/main_back_01"
+        app:cornerRadius="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dia_4_touroku_btn_002"
+        app:layout_constraintTop_toBottomOf="@+id/kikai_box"
+        />
+
+    <!-- キャンセル ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dia_4_touroku_btn_002"
+        app:layout_constraintTop_toBottomOf="@+id/kikai_box"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/dia_4_touroku_btn_001"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:text="キャンセル"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        app:backgroundTint="@color/main_back_01"
+        app:cornerRadius="6dp"
+        android:layout_marginTop="20dp"
+        android:textSize="13dp"
+        android:textColor="#FF4081"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

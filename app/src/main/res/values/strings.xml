@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">生産管理アプリ</string>
+
+    <!-- スピナー　用　配列 -->
+    <string-array name="list">
+        <item>A_項目 01</item>
+        <item>A_項目 02</item>
+        <item>A_項目 03</item>
+        <item>A_項目 04</item>
+        <item>A_項目 05</item>
+        <item>A_項目 06</item>
+    </string-array>
+
+    <string-array name="list_02">
+        <item>B_項目 01</item>
+        <item>B_項目 02</item>
+        <item>B_項目 03</item>
+        <item>B_項目 04</item>
+        <item>B_項目 05</item>
+        <item>B_項目 06</item>
+    </string-array>
+
+    <string-array name="list_03">
+        <item>C_項目 01</item>
+        <item>C_項目 02</item>
+        <item>C_項目 03</item>
+        <item>C_項目 04</item>
+        <item>C_項目 05</item>
+        <item>C_項目 06</item>
+    </string-array>
+
+</resources>

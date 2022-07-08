@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:isScrollContainer="false"
+    android:id="@+id/qr_const_03"
+    tools:context=".QR_Barcode_Read">
+
+
+
+    <LinearLayout
+        android:id="@+id/qr_const_01"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:paddingBottom="30dp"
+        >
+
+        <!-- フォーカス　外し用 -->
+        <TextView
+            android:id="@+id/focusView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/qr_const_02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <!-- 上段　読み取り　情報 エリア -->
+
+            <View
+                android:id="@+id/header_view"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="@color/main_back_01"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <!-- 読み取り　データエリア　開始-->
+
+            <TextView
+                android:id="@+id/Tosou_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/header_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@color/menu_color"
+                android:text=""
+                android:gravity="center_horizontal"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="20dp"
+                android:padding="3dp"
+                />
+
+            <!-- JAN コード　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_input_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Tosou_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="13"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="30dp"
+                android:textColorHint="#FF4081"
+                app:boxBackgroundColor="@color/main_back_01"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/jan_input_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:hint="商品コードで検索できます"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="13"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- JAN コード　入力 END -->
+
+            <!-- 2 列目 -->
+            <!-- 品目区分　入力なし -->
+
+            <!-- ラベル -->
+            <TextView
+                android:id="@+id/hinmoku_label"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/user_input_box"
+                app:layout_constraintRight_toLeftOf="@+id/hinmei_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="品目区分"
+                android:textColor="@color/colorPinku"
+                />
+
+            <TextView
+                android:id="@+id/hinmei_label"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/user_input_box"
+                app:layout_constraintLeft_toRightOf="@+id/hinmoku_label"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="品名"
+                android:textColor="@color/colorPinku"
+                />
+            <!-- ラベル END -->
+
+            <!-- 値　受け取り　エリア -->
+            <TextView
+                android:id="@+id/hinmoku_label_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/hinmoku_label"
+                app:layout_constraintRight_toLeftOf="@+id/hinmei_label_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text=""
+                android:background="@drawable/bg_border_bottom"
+                android:textColor="#ffffff"
+                android:paddingBottom="7dp"
+                />
+
+            <TextView
+                android:id="@+id/hinmei_label_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/hinmoku_label"
+                app:layout_constraintLeft_toRightOf="@+id/hinmoku_label_text"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text=""
+                android:background="@drawable/bg_border_bottom"
+                android:textColor="#ffffff"
+                android:paddingBottom="7dp"
+                />
+            <!-- 値　受け取り　エリア END -->
+            <!-- 品名　入力なし  END -->
+            <!-- 2 列目 END -->
+
+            <!-- 3 列目 -->
+            <!-- ラベル -->
+            <TextView
+                android:id="@+id/bikou_label"
+                android:layout_width="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/hinmoku_label_text"
+                app:layout_constraintRight_toLeftOf="@+id/hinmei_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="備考"
+                android:textColor="@color/colorPinku"
+                />
+
+            <TextView
+                android:id="@+id/place_label"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/hinmoku_label_text"
+                app:layout_constraintLeft_toRightOf="@+id/hinmoku_label"
+                app:layout_constraintBaseline_toBaselineOf="@+id/bikou_label"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="場所"
+                android:textColor="@color/colorPinku"
+                />
+            <!-- ラベル END -->
+
+            <!-- 値　受け取り　エリア -->
+            <TextView
+                android:id="@+id/bikou_label_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/bikou_label"
+                app:layout_constraintRight_toLeftOf="@+id/place_label_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text=""
+                android:background="@drawable/bg_border_bottom"
+                android:textColor="#ffffff"
+                android:paddingBottom="7dp"
+                />
+
+            <TextView
+                android:id="@+id/place_label_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/bikou_label"
+                app:layout_constraintLeft_toRightOf="@+id/bikou_label_text"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text=""
+                android:background="@drawable/bg_border_bottom"
+                android:textColor="#ffffff"
+                android:paddingBottom="7dp"
+                />
+
+            <!-- 3 列目 END -->
+
+            <!-- 開始時間　追加 -->
+            <Button
+                android:id="@+id/qr_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F5F5F5"
+                android:drawableBottom="@drawable/ic_baseline_more_time_24"
+                android:text="開始時間"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bikou_label_text"
+                app:layout_constraintRight_toLeftOf="@+id/qr_end_time"
+                android:layout_marginLeft="15dp"
+                />
+
+            <!-- 終了時間　追加 -->
+            <Button
+                android:id="@+id/qr_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F5F5F5"
+                android:drawableBottom="@drawable/ic_baseline_more_time_24"
+                android:text="終了時間"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/qr_start_time"
+                app:layout_constraintTop_toBottomOf="@+id/get_spiiner_text"
+                app:layout_constraintBaseline_toBaselineOf="@+id/qr_start_time"
+                android:layout_marginLeft="15dp"
+                />
+
+
+            <!-- 開始時間 view　追加 -->
+            <TextView
+                android:id="@+id/qr_start_time_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_border_bottom"
+                android:gravity="center_horizontal"
+                android:paddingBottom="7dp"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/qr_end_time_view"
+                app:layout_constraintTop_toBottomOf="@+id/qr_start_time" />
+
+            <!-- 終了時間 view　追加 -->
+            <TextView
+                android:id="@+id/qr_end_time_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/qr_end_time"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/qr_start_time_view"
+                android:background="@drawable/bg_border_bottom"
+                android:paddingBottom="7dp"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="20dp"
+                />
+            <!-- 時間コンポーネント　追加 END -->
+
+
+            <!-- 追加　「樹脂成型課」　用　入力　表示　ボタン  -->
+            <Button
+                android:id="@+id/Zyushi_Seikei_btn"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/sankou_bulue"
+                android:drawableBottom="@drawable/ic_baseline_input_22"
+                android:text="樹脂成型課 段取り時間 入力"
+                android:textColor="#666666"
+                android:textSize="11dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_view"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <!-- 色段取　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/iro_z_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Zyushi_Seikei_btn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/Kata_z_box"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/iro_z_edit"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="色段取"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--  色段取　入力  END -->
+
+            <!-- 型段取り　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Kata_z_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Zyushi_Seikei_btn"
+                app:layout_constraintLeft_toRightOf="@+id/iro_z_box"
+                app:layout_constraintRight_toLeftOf="@+id/Input_kakou_box"
+                app:layout_constraintBaseline_toBaselineOf="@+id/iro_z_box"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Kata_z_edit"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="型段取"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 型段取り　入力  END -->
+
+            <!-- 機械コード　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Kikai_z_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Zyushi_Seikei_btn"
+                app:layout_constraintLeft_toRightOf="@+id/Kata_z_box"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="10dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Kikai_z_input"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="機械コード"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="16sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081"
+                    app:layout_constraintRight_toLeftOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!-- 段取り時間 、　作業時間　入力エリア　開始  -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/content_back_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="6dp"
+                android:paddingHorizontal="5dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintTop_toBottomOf="@+id/iro_z_box"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <!-- 段取り時間　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_Setup_Time_Box"
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingHorizontal="15dp"
+                        android:layout_marginLeft="10dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="4"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_setup_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="段取り時間"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="4"
+                            android:maxLines="1"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- 段取り時間　入力 END -->
+
+
+                    <!-- 作業時間　入力 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Input_Work_Time_Box"
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="4"
+                        app:hintEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        android:paddingHorizontal="15dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_work_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="作業時間（優先）"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="4"
+                            android:maxLines="1"
+                            android:textSize="14sp"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- 作業時間　入力 END -->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 1 列目 -->
+
+
+
+            <!-- 予定数　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_Yotei_box"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/content_back_01"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:nextFocusDown="@+id/Input_starttime_box"
+                android:imeOptions="actionNext"
+                android:layout_marginTop="0dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_Yotei_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="予定数"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/Input_starttime_box"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="16sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081"
+                    app:layout_constraintRight_toLeftOf="@+id/Input_starttime_box" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- 開始時　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_starttime_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_Yotei_box"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/Input_endtime_box"
+                android:layout_marginTop="0dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_starttime"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="開始時"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--  開始時間　入力  END -->
+
+            <!-- 終了時　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_endtime_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_Yotei_box"
+                app:layout_constraintLeft_toRightOf="@+id/Input_starttime_box"
+                app:layout_constraintRight_toLeftOf="@+id/Input_kakou_box"
+                app:layout_constraintBaseline_toBaselineOf="@+id/Input_starttime_box"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Input_endtime"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="終了時"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 終了時　入力  END -->
+
+            <!-- 加工数　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_kakou_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_Yotei_box"
+                app:layout_constraintLeft_toRightOf="@+id/Input_endtime_box"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="0dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_kakou"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:hint="加工数"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="16sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081"
+                    app:layout_constraintRight_toLeftOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- 1 列目　END -->
+
+
+            <!-- 2 列目 -->
+            <!-- 不良品数　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_furyou_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_starttime_box"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/Input_seisan_box"
+                android:layout_marginTop="5dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_furyou"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:hint="不良品数"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    app:colorControlActivated="#FF4081"
+                    android:textColorHint="#FF4081"
+                    app:colorControlNormal="#FF4081"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--  不良品数　入力  END -->
+
+            <!-- 生産数　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_seisan_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_starttime_box"
+                app:layout_constraintLeft_toRightOf="@+id/Input_furyou_box"
+                app:layout_constraintRight_toLeftOf="@+id/Input_ryouhinn_box"
+                app:layout_constraintBaseline_toBaselineOf="@+id/Input_furyou_box"
+                android:layout_marginTop="5dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="10dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Input_seisan"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:hint="総生産数"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textColorHint="#FF4081"
+                    android:textSize="16sp"
+                    app:colorControlActivated="#FF4081"
+                    app:colorControlNormal="#FF4081" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 生産数　入力  END -->
+
+            <!-- 良品数　入力 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Input_ryouhinn_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_starttime_box"
+                app:layout_constraintLeft_toRightOf="@+id/Input_furyou_box"
+                app:layout_constraintBaseline_toBaselineOf="@+id/Input_furyou_box"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="0dp"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="7"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:boxStrokeColor="@color/colorPinku"
+                android:paddingHorizontal="15dp"
+                app:boxBackgroundColor="@color/colorHaiiro"
+                android:textColorHint="#FF4081"
+                android:layout_marginLeft="140dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Input_ryouhinn"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:hint="良品数"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    app:colorControlActivated="#FF4081"
+                    android:textColorHint="#FF4081"
+                    app:colorControlNormal="#FF4081"
+                    android:textStyle="bold"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ３列目 -->
+
+            <!-- 予定表　閲覧　ボタン -->
+            <!-- 保存　ボタン -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/yotei_btn"
+                app:layout_constraintTop_toBottomOf="@+id/Input_seisan_box"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="120dp"
+                android:layout_height="66dp"
+                android:layout_gravity="bottom"
+                android:text="予定表"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                app:backgroundTint="@color/main_back_01"
+                app:cornerRadius="6dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16dp"
+                android:textColor="#FF4081"
+                android:layout_marginLeft="20dp"
+                />
+
+            <!-- 最終工程 -->
+
+            <!-- 最終工程　ラベル -->
+            <TextView
+                android:id="@+id/last_koutei_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/Input_furyou_box"
+                app:layout_constraintLeft_toRightOf="@+id/yotei_btn"
+                app:layout_constraintRight_toLeftOf="@+id/save_btn"
+                android:text="最終工程"
+                android:textColor="@color/main_back_01"
+                android:textFontWeight="@android:integer/config_longAnimTime"
+                android:layout_marginTop="10dp"
+                />
+            <!-- チェックボックス -->
+            <CheckBox
+                android:id="@+id/last_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/last_koutei_label"
+                app:layout_constraintLeft_toRightOf="@+id/yotei_btn"
+                app:layout_constraintRight_toLeftOf="@+id/save_btn"
+                />
+
+            <!-- チェックボックス END -->
+
+            <!-- 保存　ボタン -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_btn"
+                app:layout_constraintTop_toBottomOf="@+id/Input_seisan_box"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/last_koutei_label"
+                app:layout_constraintBaseline_toBaselineOf="@+id/yotei_btn"
+                android:layout_width="120dp"
+                android:layout_height="66dp"
+                android:layout_gravity="bottom"
+                android:text="保存"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                app:backgroundTint="#a4d7e6"
+                app:cornerRadius="6dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>

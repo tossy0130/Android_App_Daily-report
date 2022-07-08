@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <!-- ヘッダー　担当者 -->
+    <FrameLayout
+        android:id="@+id/header_account_view"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@color/header_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/co_03"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/back_btn_y"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="6dp"
+                android:singleLine="true"
+                android:text="ユーザー名"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@+id/back_btn_y"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- スタッツ ok アイコン -->
+            <ImageButton
+                android:id="@+id/send_view_Move"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="0dp"
+                android:adjustViewBounds="true"
+                android:layout_marginRight="35dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_send_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/user_name"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
+
+            <!-- ************** 横線 *************** -->
+            <View
+                android:id="@+id/list_line_col_02"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/back_btn_y" />
+
+            <!-- 部署名 -->
+            <!-- 部署名　スピナー -->
+
+            <TextView
+                android:id="@+id/busyo_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:drawableLeft="@drawable/ic_baseline_call_to_action_24"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="6dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_02" />
+
+            <!-- スタッツ ok アイコン -->
+            <ImageButton
+                android:id="@+id/stuatu_img_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="40dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_signal_cellular_alt_24"
+                app:layout_constraintLeft_toRightOf="@+id/busyo_view"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_02"
+                app:layout_constraintRight_toRightOf="@+id/stuatu_img_ng"
+                />
+
+            <!-- スタッツ NG アイコン -->
+            <ImageButton
+                android:id="@+id/stuatu_img_ng"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/ic_baseline_signal_cellular_off_24"
+                app:layout_constraintLeft_toRightOf="@+id/stuatu_img_ok"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_02"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
+            <!--
+            <Spinner
+                android:id="@+id/spinner_busyo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_blue_light"
+                android:paddingRight="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/busyo_view"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_02"
+                />
+                -->
+
+            <!--
+            <TextView
+                android:id="@+id/busyo_text_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_02"
+                app:layout_constraintLeft_toRightOf="@+id/busyo_view"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="管理課"
+                android:paddingTop="8dp"
+                android:textColor="#ffffff"
+                />
+            -->
+
+            <!-- 部署名 END -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <!-- ヘッダー 03 -->
+    <FrameLayout
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="#182C42"
+        app:layout_constraintTop_toBottomOf="@+id/header_account_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+        <!-- MM/dd E -->
+        <TextView
+            android:id="@+id/date_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="15dp"
+            android:gravity="center"
+            />
+
+        <!-- 13:00 時刻 -->
+        <DigitalClock
+            android:id="@+id/digitalClock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="8dp"
+            android:text="DigitalClock"
+            android:textSize="14dp"
+            android:textColor="#ffffff"
+            />
+
+        <!-- タスク数　合計エリア -->
+        <TextView
+            android:id="@+id/tasuku_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+    </FrameLayout>
+    <!-- ヘッダー 03 END -->
+
+    <!-- ヘッダー 04 -->
+    <FrameLayout
+        android:id="@+id/header_view_02"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#394656"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/co_02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <!-- 合計時間　エリア -->
+            <TextView
+                android:id="@+id/total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="合計時間"
+                android:textColor="@color/colorPinku"
+                android:textSize="22dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pro_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/total_time"
+                app:layout_constraintLeft_toRightOf="@+id/total_time"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/max_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=" / 480 分"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/total_time"
+                app:layout_constraintLeft_toRightOf="@+id/pro_time"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <!-- ************** 横線 *************** -->
+            <View
+                android:id="@+id/list_line_col_01"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/total_time" />
+
+            <!--遅刻時間 エリア -->
+            <Button
+                android:id="@+id/late_time"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:text="遅刻時間（分）"
+                android:textColor="@color/colorPinku"
+                android:textSize="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/input_late_time"
+                app:layout_constraintTop_toBottomOf="@+id/list_line_col_01"
+                android:background="#55000000"
+                android:drawableLeft="@drawable/ic_baseline_assignment_late_18"
+                />
+
+
+            <!--遅刻時間 入力 エリア -->
+
+
+            <!-- 遅刻時間 END -->
+
+
+            <!-- 時間外（残業） エリア -->
+
+            <!-- 時間外（残業） 入力 -->
+
+            <!-- 時間外（残業）　表示 -->
+            <EditText
+                android:id="@+id/input_late_time"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:colorControlNormal="#ffffff"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toRightOf="@+id/late_time"
+                app:layout_constraintTop_toBottomOf="@+id/total_time" />
+
+            <Button
+                android:id="@+id/over_time"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="時間外：残業（分）"
+                android:textColor="@color/colorPinku"
+                android:textSize="14dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/input_over_time"
+                app:layout_constraintTop_toBottomOf="@+id/late_time"
+                android:background="#55000000"
+                android:drawableLeft="@drawable/ic_baseline_history_24"
+                />
+
+            <EditText
+                android:id="@+id/input_over_time"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toRightOf="@+id/over_time"
+                app:layout_constraintTop_toBottomOf="@+id/input_late_time"
+                android:gravity="center_horizontal"
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+    <!-- ヘッダー 04 END -->
+
+    <TextView
+        android:id="@+id/err_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header_view_02"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <!-- マスターファイル　ダウンロード -->
+    <!-- 作業追加　ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/csv_btn_02"
+        app:layout_constraintTop_toBottomOf="@+id/err_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="#FF89CA"
+        android:text="商品マスター ダウンロード"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/ic_baseline_get_app_24"
+        app:iconTint="#FB7AC2"
+        app:strokeColor="#e5e5e5"
+        app:backgroundTint="@color/colorHaiiro"
+        app:iconGravity="textStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        />
+
+
+    <!-- リスト　一覧 -->
+    <ListView
+        android:id="@+id/listView_01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="295dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/csv_btn_02"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

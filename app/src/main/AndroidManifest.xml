@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.t_prc_prototype_01">
+    <!-- マニフェスト　追加 start -->
+    <!-- QR 読み取り用 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- ネットワークへのフルアクセス -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Wi-Fi 接続　確認用 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- WebView　用 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".WebViewActivity_06"></activity>
+        <activity android:name=".WebViewActivity_05" />
+        <activity android:name=".WebViewActivity_04" />
+        <activity android:name=".WebViewActivity_03" />
+        <activity
+            android:name=".Worker_TEST_01"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".File_Send_log"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".List_Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Send_CSV_01"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Free_Input"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebViewActivity_02"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QR_Barcode_Read"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Operation_Input"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Work_Scan_test"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Work_Choice"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" /> <!-- バーコード　読み取り　画面　横 -->
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+    </application>
+
+</manifest>
